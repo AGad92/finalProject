@@ -1,0 +1,17 @@
+.Profile{
+    padding: 30px;
+  
+}
+.profile-title{
+    font-size: 100px;
+    text-align: center;
+    padding: 20px;
+    color:#FA0F94;
+}
+
+
+@media (min-width: 1200px) {
+    .Profile {
+        min-height: 80vh;
+    }
+}

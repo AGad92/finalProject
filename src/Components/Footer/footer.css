@@ -1,0 +1,113 @@
+footer{
+    background-image: url(../../images/main/logo.png);
+    background: #a96f90;
+    color:var#ffffff;
+    padding-bottom: 15rem;
+    margin-top: 5rem;
+    position: relative;
+    align-items: center;
+}
+
+.footer__elementor-shape {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    line-height: 0;
+    direction: rtl;
+}
+.elementor-shape-bottom {
+    top: -10px;
+}
+.elementor-shape[data-negative=false].elementor-shape-bottom, .elementor-shape[data-negative=true].elementor-shape-top {
+    transform: rotate(180deg);
+}
+ .footer__svg{
+    fill:var#ffffff;
+}
+footer ul li{
+color:#e0dede;
+font-size: 1rem;
+padding: 0.5rem 0;
+}
+
+footer ul h3{
+color:#fff;
+padding-bottom: 2rem;
+width: 50%;
+}
+footer ul h3::after
+{
+  content: "";
+  position: relative;
+  left: 0;
+  top: 1rem;
+  display: block;
+  border-bottom: #fff 2px solid;
+  padding-bottom: 0;
+}
+
+
+.con{
+padding: 2rem;
+}
+
+
+.icons .ri-facebook-circle-fill:hover{
+  color: #3b5998;
+  cursor: pointer;
+}
+.icons .ri-instagram-line:hover{
+  color:  #ac2bac;;
+  cursor: pointer;
+}
+.icons .ri-twitter-fill:hover{
+  color: #55acee;
+  cursor: pointer;
+}
+
+.stores {
+  width: 100%;
+}
+.description-img{
+  font-size: 2rem;
+  padding-bottom: 3rem;
+  font-family: custom;
+}
+.icons{
+color: #fff;
+font-size: 2rem;
+width: 50%;
+margin: 20px 5px  ;
+border-radius: 100px;
+/* box-shadow: 2px 0.5px rgba(201, 200, 200, 0.687); */
+}
+
+footer .logo{
+width: 30%;
+}
+
+#sub-input{
+padding: 10px 15px;
+border-radius: 10px;
+border: none;
+outline:none;
+
+}
+
+.btn-default{
+font-size: 1rem;
+border-radius: 15px 0px 0px 15px;
+margin-right: 1rem;
+padding: 10px 2rem ;
+color: white;
+position: absolute;
+top:0;
+left: -3rem;
+background-color:#f3f77a;
+border: none;
+}
+.btn-default:hover{
+background-color:yellow;
+}

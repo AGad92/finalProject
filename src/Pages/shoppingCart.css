@@ -1,0 +1,26 @@
+.cart {
+    min-height: 75vh;
+}
+
+.empty-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.empty-img {
+    max-width: 500px;
+}
+
+.empty-text {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+@media (min-width: 1200px) {
+    .empty-cart{
+        min-height: 80vh;
+    }
+}
