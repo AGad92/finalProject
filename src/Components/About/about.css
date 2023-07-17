@@ -1,5 +1,5 @@
 .about {
-  background-color: #8c5c78;
+  background-color: #76005f;
 }
 
 .about__head {
@@ -66,33 +66,32 @@
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    .about .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 100px 0px;
-    }
+  .about .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0px;
+  }
 
-    .about__head {
-        width: 45%;
-    }
+  .about__head {
+    width: 45%;
+  }
 
-    .about__image {
-       position: relative;
-       width: 45%;
-      }
+  .about__image {
+    position: relative;
+    width: 45%;
+  }
 
+  .about__image img {
+    width: 100%;
+  }
 
-    .about__image img {
-        width: 100%;
-      }
-
-      .about__image .floating-image {
-        position: absolute;
-        width: 60%;
-        top: -30%;
-        right: -10%
-      }
+  .about__image .floating-image {
+    position: absolute;
+    width: 60%;
+    top: -30%;
+    right: -10%;
+  }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */

@@ -18,7 +18,7 @@ export default function Babies() {
 
   return (
     <div className="col-lg-9">
-      <div className=" my-5">
+      <div className=" my-1">
         <AddBaby />
         <BabyCard />
       </div>

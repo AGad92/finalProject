@@ -2,11 +2,10 @@
   padding: 15px;
   border-radius: 10px;
   width: 30%;
-  /* border: 1px solid #333; */
   margin-bottom: 20px;
   box-shadow: 0 0 5px #ccc;
-
 }
+
 .blog-info img {
   display: block;
   width: 100%;
@@ -15,6 +14,7 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
 .blog-info h2 {
   min-height: 30px;
   max-height: 35px;
@@ -24,6 +24,7 @@
   color: #000;
   -webkit-line-clamp: 3;
 }
+
 .blog-info p {
   color: #555;
   margin-bottom: 20px;
@@ -35,25 +36,17 @@
   white-space: normal;
   overflow: hidden;
 }
-/* replace it with bootstarp button */
 
-/* .blog-info a {
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  transition: 0.5s all;
-  border: 1px solid #000;
-  background: transparent;
-  font-size: 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #000;
+.blog-info button{
+  border: 1px solid #8c5c87;
 }
-.blog-info a:hover {
-  background-color: #ff6347;
-  color: #fff;
-  border: 1px solid #ff6347;
-} */
+
+.blog-info button:hover{
+  color: #FFF;
+  background-color: #8c5c87;
+}
+
+
 
 .blog_link {
   text-decoration: none;

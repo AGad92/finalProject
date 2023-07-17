@@ -1,6 +1,6 @@
 import { useRef, React, useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import Logo from "../../images/main/logo.png";
+import Logo from "../../images/main/logo4.gif";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./navbar.css";
@@ -36,16 +36,19 @@ export default function Navbar() {
           <NavLink to="home" className="links">
             الرئيسية
           </NavLink>
-          {isLoggedIn ? (
-            <NavLink to="profile/info" className="links">
+          {isLoggedIn && user.role === "mother" ? (
+            <NavLink to="profile/babies" className="links">
               صفحتك
             </NavLink>
           ) : (
-            ""
+            isLoggedIn?
+            <NavLink to="profile/info" className="links">
+            صفحتك
+          </NavLink> :""
           )}
           {!user || user.role === "mother" ? (
             <>
-              <NavLink to="products" className="links">
+              <NavLink to="products" className="links" >
                 تسوقي
               </NavLink>
               <NavLink to="blog" className="links">
@@ -68,7 +71,11 @@ export default function Navbar() {
                 <span className="profile-droplist">
                   <span
                     onClick={() => {
-                      navigate("profile");
+                      if(user.role === "mother"){
+                        navigate("profile/babies");
+                      }else{
+                        navigate("profile/info");
+                      }
                     }}
                   >
                     <ion-icon name="person-circle-outline"></ion-icon> حسابي{" "}

@@ -7,7 +7,7 @@ export default function OrderDone() {
     const navigate = useNavigate();
     useEffect(()=> {
         setTimeout(()=> {
-            navigate('/profile/info')
+            navigate('/profile/myorders')
         },3000)
     },[navigate])
     

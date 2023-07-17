@@ -46,19 +46,12 @@
   font-weight: 600;
   margin-bottom: 10px;
 }
-/* replace it with bootstrap button */
-/* .product-info button {
-  padding: 10px 20px;
-  outline: none;
-  cursor: pointer;
-  transition: 0.3s all;
-  border: 1px solid #000;
-  background: transparent;
-  font-size: 20px;
-  border-radius: 10px;
-} */
-/* .product-info button:hover {
-  background-color: #333;
-  color: #fff;
-  border: 1px solid transparent;
-} */
+
+.product-info  button {
+  border: 1px solid #8c5c87;
+}
+
+.product-info  button:hover {
+  color: #FFF;
+  background-color: #8c5c87;
+}

@@ -33,10 +33,10 @@ function Blog() {
     <div className="Blog">
 
         <div className="container">
-        <AddBlog />
             <div className="title-blog">
                 <h1>المقالات</h1>
             </div>
+            <AddBlog />
             <div className="blog-contant">
               <div className='card-info'>
               {

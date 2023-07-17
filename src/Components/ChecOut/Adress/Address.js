@@ -3,6 +3,9 @@ import "./Address.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useSelector } from "react-redux";
+import Payment from "../Payment/Payment";
+import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -13,6 +16,8 @@ export default function Address() {
   const addRef = useRef();
   const [arrow, setArrow] = useState("up")
   const {shippingAdress} = useSelector(state => state.OrderSlice);
+  const [submitted, setSubmitted] = useState(false)
+const navigate = useNavigate();
 
   const addressSchema = Yup.object().shape({
     street: Yup.string().required("الشارع مطلوب"),
@@ -31,6 +36,7 @@ export default function Address() {
     validationSchema: addressSchema,
     onSubmit: (values) => {
         localStorage.setItem("address", JSON.stringify(values))
+        console.log(values)
     },
   });
 

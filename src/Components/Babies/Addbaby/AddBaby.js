@@ -26,7 +26,7 @@ export default function AddBaby() {
           weight: values.weight,
           height: values.height,
           headSize: values.headSize,
-          age: values.age,
+          birthDate: values.birthDate,
           temperature: values.temperature,
         }
         dispatch(addbaby({babyInfo})).then(()=>{
@@ -43,7 +43,7 @@ export default function AddBaby() {
     <>
       <button
         type="button"
-        className="btn btn-danger me-5"
+        className="btn btn-warning me-5"
         data-bs-toggle="modal"
         data-bs-target="#babyModal"
       >

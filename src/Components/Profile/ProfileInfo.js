@@ -2,12 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 function ProfileInfo() {
-  const user = useSelector(state => state.UserSlice.user)
+  const user = useSelector((state) => state.UserSlice.user);
 
   return (
     <div className="col-lg-9">
-    <div className="profile-info ">
-      <div className="container">
+      <div className="profile-info ">
+        <div className="container">
           <div className="card mb-4">
             <div className="card-body shadow  bg-white rounded">
               <div className="row">
@@ -33,9 +33,7 @@ function ProfileInfo() {
                   <p className="mb-0">الهاتف :</p>
                 </div>
                 <div className="col-sm-9">
-                  <p className="text-muted mb-0">
-                    0{user.phone}
-                  </p>
+                  <p className="text-muted mb-0">0{user.phone}</p>
                 </div>
               </div>
               <hr />
@@ -47,7 +45,7 @@ function ProfileInfo() {
                   <p className="text-muted mb-0">{user.address}</p>
                 </div>
               </div>
-              <hr/>
+              <hr />
               <div className="row">
                 <div className="col-sm-3">
                   <p className="mb-0">العمر :</p>
@@ -58,8 +56,8 @@ function ProfileInfo() {
               </div>
             </div>
           </div>
+        </div>
       </div>
-    </div>
     </div>
   );
 }

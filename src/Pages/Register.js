@@ -75,8 +75,8 @@ export default function Register() {
           <img src={TheImage}/>
           </div>
         <div className="signup-form">
-          <h2>أنشاء حساب جديد</h2>
-          <p>الرجاء أنشاء حساب حتي تتمكن من استخدام الموقع</p>
+          <h2>إنشاء حساب جديد</h2>
+          <p>الرجاء إنشاء حساب حتي تتمكن من استخدام الموقع</p>
           <form onSubmit={formik.handleSubmit}>
             <div className="form-container">
               <div className="input-container">
@@ -152,7 +152,7 @@ export default function Register() {
                   name="age"
                   placeholder="ادخل عمرك"
                 />
-                <small className="error-msg">{formik.errors.age}</small>
+                <small className="error-msg ">{formik.errors.age}</small>
               </div>
               <div className="input-container">
                 <select
@@ -162,12 +162,11 @@ export default function Register() {
                 >
                   <option value="">اختاري نوع الحساب </option>
                   <option value="mother">أم</option>
-                  <option value="pregnant">حامل</option>
                   <option value="seller">تاجر</option>
                 </select>
               </div>
               <div className="input-container">
-                <button className="btn-signin" type="submit">
+                <button className="btn-signin w-100" type="submit">
                   {isLoading ? (
                     <i className="fa-solid fa-spinner fa-spin-pulse"></i>
                   ) : (

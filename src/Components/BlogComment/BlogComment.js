@@ -1,8 +1,11 @@
 import React from 'react'
 import './blogComment.css'
 import userImage from '../../images/profile-image/user_image.webp'
+import moment from 'moment/moment';
+
 
 export default function BlogComment({comment}) {
+
 
   return (
    <>
@@ -13,7 +16,7 @@ export default function BlogComment({comment}) {
             <img src={comment.author.image || userImage} alt="user_image" />
             <span>
               <span className="username"> {comment.author.name}</span>
-              <span className="date"> {comment.date} </span>
+              <span className="date"> {moment(comment.date).local().format("LLLL")} </span>
             </span>
           </div>
           <div className="comment-body_text">

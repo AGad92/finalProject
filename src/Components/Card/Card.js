@@ -12,7 +12,7 @@ import { NavLink } from "react-router-dom";
 function Card(props) {
   const { product } = props;
   const api = "http://localhost:4000/";
-
+  const isLoggedIn = useSelector((state) => state.UserSlice.isLoggedIn);
   const { _id } = useSelector((state) => state.UserSlice.user) || "";
   const { cartItems } = useSelector((state) => state.ProductSlice);
 
@@ -78,8 +78,9 @@ function Card(props) {
       </NavLink>
       <button
         type="button"
-        className="btn btn-outline-primary "
+        className="btn btn-outline "
         onClick={handleAddToCart}
+        
       >
         اضف الى العربة
       </button>

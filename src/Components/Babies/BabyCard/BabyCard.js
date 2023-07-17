@@ -1,28 +1,45 @@
+import axios from "axios";
 import React from "react";
-import { useState } from "react";
 import { Accordion } from "react-bootstrap";
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { getBaby } from "../../../Redux/Slices/MohterSlice";
 
 export default function BabyCard() {
   const { baby } = useSelector((state) => state.MotherSlice);
-  const [vaccines, setVaccines] = useState([
-    { name: 'الجدري', date: '1/07/2023', checked: false },
-    { name: 'التهاب الكبد الوبائي', date: '15/08/2023', checked: false }
-  ]);
+  const dispatch = useDispatch();
+  const userId = localStorage.getItem("id");
+  const api = "http://localhost:4000/vaccination/";
+  async function updateVac(babyId) {
+    try {
+      let res = await axios.get(`${api}${userId}/${babyId}`);
+      dispatch(getBaby());
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-  const handleCheckboxChange = (index) => {
-    const updatedVaccines = [...vaccines];
-    updatedVaccines[index].checked = !updatedVaccines[index].checked;
-    setVaccines(updatedVaccines);
-  };
+  async function handlVaccine(vacId,babyId) {
+    try {
+      console.log(vacId,babyId)
+      let res = await axios.patch(`${api}${userId}/${babyId}`,{vacId})
+      console.log(res)
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <Accordion className="my-5 mx-5">
       {baby &&
         baby.map((single, index) => {
           return (
-            <Accordion.Item eventKey={index}>
+            <Accordion.Item
+              eventKey={index}
+              onClick={() => {
+                updateVac(single._id)
+              }}
+            >
               <Accordion.Header>{single.name}</Accordion.Header>
               <Accordion.Body>
                 <table className="table text-center">
@@ -47,42 +64,41 @@ export default function BabyCard() {
                       </th>
                     </tr>
                     <tr>
-                      <th colSpan={2}>نوع التطعيم</th>
-                      <th>التاريخ</th>
+                      <th colSpan={2}>اسم التطعيم</th>
                       <th>الحاله</th>
+                      <th>التحكم</th>
                     </tr>
-                    <tr className={vaccines[0].checked?"table-info":""}>
-                      <td colSpan={2}>{vaccines[0].name}</td>
-                      <td>{vaccines[0].date}</td>
-                      <td>
-                        <input
-                          type="checkbox"
-                          checked={vaccines[0].checked}
-                          name="vaccine1"
-                          disabled={vaccines[0].checked}
-                          id={`vaccine${index}`}
-                          onChange={()=> {
-                            handleCheckboxChange(0);
-                          }}
-                        />
-                      </td>
-                    </tr>
-                    <tr className={vaccines[1].checked?"table-info":""}>
-                      <td colSpan={2}>{vaccines[1].name}</td>
-                      <td>{vaccines[1].date}</td>
-                      <td>
-                        <input
-                        checked={vaccines[1].checked}
-                        disabled={vaccines[1].checked}
-                          type="checkbox"
-                          name="vaccine1"
-                          id={`vaccine${index}`}
-                          onChange={()=> {
-                            handleCheckboxChange(1);
-                          }}
-                        />
-                      </td>
-                    </tr>
+                    {single.vaccination.map((vaccine) => {
+                      return (
+                        <tr className={vaccine.checked ? "table-info" : ""}>
+                          <td colSpan={2}>{vaccine.name}</td>
+                          <td>{!vaccine.status ? "لم يتم" : "تم التطعيم"}</td>
+                          <td>
+                            {!vaccine.status ? 
+                              <button
+                                className="btn btn-success"
+                                onClick={() => {
+                                  handlVaccine(vaccine._id,single._id).then(()=>{
+                                    updateVac(single._id)
+                                  })
+                                }}
+                              >
+                                تم
+                              </button>:    <button disabled
+                                className="btn btn-success"
+                                onClick={() => {
+                                  handlVaccine(vaccine._id,single._id).then(()=>{
+                                    updateVac(single._id)
+                                  })
+                                }}
+                              >
+                                تم
+                              </button>
+                            }
+                          </td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </Accordion.Body>

@@ -26,7 +26,6 @@ import OrderDone from "./Components/ChecOut/OrderDone/OrderDone";
 import UserOrders from "./Components/userOrders/userOrders";
 
 
-
 function App() {
   const dispatch = useDispatch();
   const { _id } = useSelector((state) => state.ProductSlice.product);
@@ -45,29 +44,31 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="home" element={<Main />} />
-        <Route path="products" element={<Products />} />
+        <Route path="/" element={<><Main /><Footer /></>} />
+        <Route path="home" element={<><Main /><Footer /></>} />
+        <Route path="products" element={<><Products /><Footer /></>} />
         <Route path={_id} element={<ProductDetails />} />
         <Route path="about" element={<About />} />
-        <Route path="blog" element={<Blog />} />
+        <Route path="blog" element={<><Blog /><Footer /></>} />
         <Route path="blogDetails" element={<BlogDetails />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
-        <Route path="profile" element={<Profile />}>
+        <Route path="profile" element={<><Profile /><Footer /></>}>
           <Route path="info" element={<ProfileInfo />} />
           <Route path="edit" element={<EditInfo />} />
-          <Route path="products" element={<SellerProducts />} />
+          <Route path="products" element={<><SellerProducts /></>} />
           <Route path='todo' element={<Todo />}/>
           <Route path='babies' element={<Babies />}/>
           <Route  path="myorders" element={<UserOrders/>}/>
         </Route>
-        <Route path="cart" element={<ShoppingCart />} /> 
-        <Route path="checkout" element={<CheckOut />} />
+        <Route path="cart" element={<><ShoppingCart /><Footer /></>} /> 
+        <Route path="checkout" element={<><CheckOut /><Footer /></>} />
         <Route path="orderDone" element={<OrderDone/>}/>
-        <Route path="*"  element={<Navigate to="404" replace={true}/>}/>
+        {/* <Route path="*"  element={<Navigate to="404" replace={true}/>}/> */}
+      
       </Routes>
-      <Footer />
+
+      
       
     </>
   );

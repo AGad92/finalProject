@@ -107,14 +107,14 @@ export default function ShoppingCart() {
                               >
                                 <i className="fas fa-trash"></i>
                               </button>
-                              <button
+                              {/* <button
                                 type="button"
                                 className="btn btn-outline-primary btn-sm mb-2"
                                 data-mdb-toggle="tooltip"
                                 title="Move to the wish list"
                               >
                                 <i className="fas fa-heart"></i>
-                              </button>
+                              </button> */}
                               {/* Data */}
                             </div>
 
@@ -255,7 +255,7 @@ export default function ShoppingCart() {
           <img src={EmptyCart} className="empty-img" alt="empty cart" />
           <h3 className="empty-text">العربة فارغه</h3>
           <button
-            className="btn btn-primary px-5 py-2"
+            className="px-5 py-2"
             onClick={() => navigate("/products")}
           >
             تسوقي الان

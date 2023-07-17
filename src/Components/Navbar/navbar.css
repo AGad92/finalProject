@@ -1,5 +1,5 @@
 .active {
-  color: #ea94c5;
+  color: #76005f;
 }
 
 .logo {
@@ -12,7 +12,7 @@
 
 header {
   position: sticky;
-  background-color: #8c5c78;
+  background-color: #ffffff;
   top: 0px;
   padding: 10px;
   z-index: 999;
@@ -33,7 +33,7 @@ nav {
 }
 
 .links {
-  color: #fff;
+  color: #76005f;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
@@ -49,7 +49,7 @@ nav {
   border: none;
   background-color: transparent;
   padding: 5px;
-  color: #fff;
+  color: #76005f;
   display: none;
   opacity: 0;
 }
@@ -67,7 +67,7 @@ nav {
 }
 
 .register-btn:hover {
-  background-color: #ea94c5;
+  background-color: #76005f;
   color: #fff;
 }
 
@@ -78,7 +78,7 @@ nav {
   border-radius: 0.5rem;
   border: 1px solid #f3f77a;
   padding: 0.6rem 3rem;
-  color: #fff;
+  color: #000;
   transition: 0.3s ease-in-out;
 }
 
@@ -89,7 +89,7 @@ nav {
 
 .profile-name {
   cursor: pointer;
-  color: #fff;
+  color: #76005f;
   display: inline-block;
   position: relative;
   padding: 10px 0px;
@@ -167,6 +167,9 @@ ion-icon {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.cart-icon-container span:hover  .cart-number {
+color: #76005f;
 }
 
 @media only screen and (max-width: 1024px) {

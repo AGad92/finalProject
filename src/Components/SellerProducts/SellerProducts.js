@@ -19,7 +19,7 @@ export default function SellerProducts() {
 
   return (
     <>
-      <div className="col-lg-9">
+      <div className="col-lg-9 mx-5">
         <div className="d-flex flex-wrap justify-content-start gap-4">
           {products.map((item,index)=>{
             return  <ProductCard key={index} item={item} />

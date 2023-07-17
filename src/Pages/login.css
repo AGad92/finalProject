@@ -1,6 +1,7 @@
 .form-container{
     padding: 20px;
     text-align: center;
+    margin-top: 60px;
 }
 .sign-greeting{
     margin-bottom: 25px;
@@ -38,7 +39,12 @@
 
 .sign-form form{
     padding: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
+
 .sign-form form input{
     border-radius: 10px;
     padding: 10px;
@@ -46,6 +52,7 @@
     border: 1px solid #a9a9a9;
     width: 300px;
 }
+
 .btn-signin{
     background: none;
     width: 150px;

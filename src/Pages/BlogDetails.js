@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./blogDetails.css";
 import userImage from "../images/profile-image/user_image.webp";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,19 +22,24 @@ export default function BlogDetails() {
     blogPost: postId,
   });
   const dispatch = useDispatch();
+  const textareaRef = useRef();
+
 
   function handleComment(e) {
     comment.content = e.target.value;
     setComment(comment);
   }
 
-  function submitComment (){
-    dispatch(addComment(comment)).then(()=> {
+  function submitComment() {
+    dispatch(addComment(comment)).then(() => {
       dispatch(getComments(postId));
-    })
-    comment.content = ""
-    setComment(comment)
+      setComment({ ...comment, content: "" }); // Reset the content of the comment state
+      if (textareaRef.current) {
+        textareaRef.current.value = ""; // Reset the value of the textarea element
+      }
+    });
   }
+  
   
   useEffect(() => {
     dispatch(getBlogById(postId));
@@ -51,7 +56,7 @@ export default function BlogDetails() {
             <div className="blog-body_head">
               <img src={userImage} alt="user_image" />
               <span>
-                <span className="username"> Ahmed Gad </span>
+                <span className="username"> {oneBlog.user?.name} </span>
                 <span className="date"> {oneBlog.date} </span>
               </span>
             </div>
@@ -62,10 +67,11 @@ export default function BlogDetails() {
         </div>
       </div>
       <div className="addComment">
-        <textarea
+      <textarea
           className="form-control my-5"
           onChange={handleComment}
           defaultValue={comment.content}
+          ref={textareaRef} // Assign the ref to the textarea element
         ></textarea>
         <span
           className="send-icon"

@@ -47,7 +47,8 @@ const UserSlice = createSlice({
       state.accessToken = null;
       state.user = null;
       localStorage.removeItem("tkn");
-      localStorage.removeItem('id')
+      localStorage.removeItem('id');
+      localStorage.removeItem('address');
     },
   },
   extraReducers: {

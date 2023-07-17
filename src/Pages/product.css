@@ -39,7 +39,7 @@
     height: 60px;
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid tomato;
+    border: 1px solid #8c5c87;
     outline: none;
 }
 /* .search i{
@@ -59,13 +59,14 @@
 text-align: center;
 }
 .bar .btn{
-    border: 1px solid #ffa500;
+    border: 1px solid #8c5c87;
     font-size: 18px;
     transition: 0.3s all;
     letter-spacing: 3px;
+    margin: 0px 5px;
 }
 .bar .btn:hover{
-    background-color: #ff6347;
+    background-color: #8c5c87;
     color: #fff;
 }
 

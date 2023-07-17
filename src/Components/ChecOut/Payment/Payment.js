@@ -96,7 +96,7 @@ export default function Payment() {
         quantity: item.quantity,
         price: item.price
       })),
-      shippingAdress: JSON.parse(localStorage.getItem("address")),
+      shippingAddress: localStorage.getItem("address"),
       totalAmount: totalPrice,
     },
     onSubmit: (values) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.css";
-import ImageOne from "../../images/main/logo.png";
+import ImageOne from "../../images/main/logo4.gif";
 import ImageTwo from "../../images/main/header_btn-removebg-preview.png";
 import ImageThree from "../../images/main/app-store-logo.png";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -8,9 +8,9 @@ import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 function Footer() {
   return (
     <>
-      <footer className="ml-xl-5 ml-md-4 ml-3 pb-0 position-relative">
+      <footer className="ml-xl-5 ml-md-4 ml-3 pb-0 position-relative  wave-footer">
         <div
-          className="footer__elementor-shape  footer__elementor-shape-bottom"
+          className="footer_elementor-shape  footer_elementor-shape-bottom"
           data-negative="false"
         ></div>
         <div className="container con">
@@ -21,7 +21,7 @@ function Footer() {
                   <div className="media flex-sm-row flex-column ">
                     <div className="img-logo align-items-center">
                       <img
-                        className="logo img-fluid mobile-img mb-4 "
+                        className="logo img-fluid mobile-img "
                         src={ImageOne}
                         alt="logo"
                       />

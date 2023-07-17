@@ -2,11 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./productDetails.css";
 import ThumbImg from "../images/product-image/Newborn-baby-sleeping.jpg";
-import { addToCart, getCartItems, updateCartItem } from "../Redux/Slices/ProductSlice";
+import {
+  addToCart,
+  getCartItems,
+  updateCartItem,
+} from "../Redux/Slices/ProductSlice";
 
 function ProductDetails() {
   const item = useSelector((state) => state.ProductSlice.product);
-  const api = "http://localhost:4000/"
+  const api = "http://localhost:4000/";
   const { cartItems } = useSelector((state) => state.ProductSlice);
   const image = [item.image, item.image, item.image, item.image];
   const thumbRef = useRef();
@@ -14,10 +18,9 @@ function ProductDetails() {
   const dispatch = useDispatch();
   const { _id } = useSelector((state) => state.UserSlice.user) || "";
 
-
-  useEffect(()=> {
-    dispatch(getCartItems(_id))
-  },[dispatch])
+  useEffect(() => {
+    dispatch(getCartItems(_id));
+  }, [dispatch]);
 
   function handleImage(index) {
     setMainImage(image[index]);
@@ -33,7 +36,6 @@ function ProductDetails() {
   }
 
   function handleAddToCart() {
-
     let quantity = 1;
     const product = item._id;
     const user = _id;
@@ -47,25 +49,23 @@ function ProductDetails() {
     }
 
     if (isExist) {
-      try{
+      try {
         quantity += 1;
-        increaseQuantity(quantity, product).then(()=>{
+        increaseQuantity(quantity, product).then(() => {
           dispatch(getCartItems(_id));
         });
-      }catch(error){
-        console.log(error)
+      } catch (error) {
+        console.log(error);
       }
-      
     } else {
-      try{
-        dispatch(addToCart({ quantity, product, user })).then(()=> {
+      try {
+        dispatch(addToCart({ quantity, product, user })).then(() => {
           dispatch(getCartItems(_id));
         });
-      }catch(error) {
-        console.log(error)
+      } catch (error) {
+        console.log(error);
       }
     }
-
   }
 
   return (
@@ -96,7 +96,12 @@ function ProductDetails() {
                 <span>{item.price}</span>
                 <p>{item.description}</p>
                 <p> المخزون : {item.stock}</p>
-                <button className="btn btn-outline-primary" onClick={handleAddToCart}>اضف الى العربة</button>
+                <button
+                  className="btn btn-outline"
+                  onClick={handleAddToCart}
+                >
+                  اضف الى العربة
+                </button>
               </div>
             </div>
           </div>

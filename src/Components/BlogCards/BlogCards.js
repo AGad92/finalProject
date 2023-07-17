@@ -20,7 +20,7 @@ function BlogCards(props) {
         <h2>{blog.title}</h2>
         <p>{blog.content}</p>
       </NavLink>
-      <button className="btn btn-outline-primary" onClick={()=> {
+      <button className="btn btn-outline" onClick={()=> {
         handleBlog();
         navigate("/blogDetails")
       }}>أقرا المزيد</button>

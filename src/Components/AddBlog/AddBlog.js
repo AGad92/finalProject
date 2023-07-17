@@ -3,6 +3,7 @@ import React from "react";
 import * as Yup from "yup";
 import { addNewBlog, getBlogs } from "../../Redux/Slices/BlogSlice";
 import { useDispatch } from "react-redux";
+import "./addBlog.css"
 
 function AddBlog() {
   const dispatch = useDispatch();
@@ -31,23 +32,26 @@ function AddBlog() {
     handleImage: () => {
 
     },
-    onSubmit:  (values) => {
+    onSubmit:  (values,{resetForm}) => {
       form_data.append("title", values.title);
       form_data.append("content", values.content);
       form_data.append("author", values.author);
       form_data.append("image", values.image);
       dispatch(addNewBlog(form_data)).then(()=> {
-        dispatch(getBlogs())
+        dispatch(getBlogs());
+        resetForm();
       });
+
     },
   });
   return (
     <>
       <button
         type="button"
-        className="btn btn-outline-warning btn-block text-black"
+        className="btn btn-outline btn-block addBlogBtn"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
+
       >
         اضافة منشور جديد{" "}
       </button>

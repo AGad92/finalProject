@@ -5,6 +5,15 @@
   align-items: center;
 }
 
+.box button {
+  border:  1px solid #8c5c87;
+}
+
+.box button:hover {
+  color: #FFF;
+  background-color:   #8c5c87;
+}
+
 .product_details {
   max-width: 1200px;
   width: 100%;
