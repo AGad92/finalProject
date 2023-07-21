@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.css";
-import ImageOne from "../../images/main/logo4.gif";
+import ImageOne from "../../images/main/main logo.png";
 import ImageTwo from "../../images/main/header_btn-removebg-preview.png";
 import ImageThree from "../../images/main/app-store-logo.png";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";

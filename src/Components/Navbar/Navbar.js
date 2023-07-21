@@ -1,6 +1,6 @@
 import { useRef, React, useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import Logo from "../../images/main/logo4.gif";
+import Logo from "../../images/main/main logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./navbar.css";
